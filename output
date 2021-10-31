@@ -1,0 +1,12 @@
+Men are cutting wood	AxamI lakadiyAz  kAta rahe hEM
+{'Men': 'AxamI', 'wood': 'lakadI', 'are_cutting': 'kAta_rahe_hEM'}
+---------
+The elephant is grey	hAWI XUsara raMga kA hE
+{'elephant': 'hAWI', 'is': 'hE', 'grey': 'XUsara'}
+---------
+I was abducted by aliens	merA anya grahavAsiyoM  xvArA apaharaNa kiyA gayA WA
+{'I': 'mEM', 'by': 'xvArA', 'was_abducted': 'apaharaNa_kiyA_gayA_WA'}
+---------
+What a tall tree it is !	kiwanA UzcA peda hE yaha !
+{'What': 'kiwanA', 'tall': 'UzcA', 'tree': 'peda', 'it': 'yaha', 'is': 'hE'}
+---------
