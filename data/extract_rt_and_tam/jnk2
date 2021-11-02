@@ -1,0 +1,932 @@
+socA
+root:soca
+tam:yA(m,s,a)
+root:soca
+tam:yA(m,s,m)
+root:soca
+tam:yA(m,s,u)
+root:soca
+tam:yA(m,p,a)
+root:soca
+tam:yA(m,p,m)
+root:soca
+tam:yA(m,p,u)
+---
+bana sakawe hEM
+root:bana
+tam:0_sakawA_hE(f,p,u)
+root:bana
+tam:0_sakawA_hE(m,p,u)
+---
+banAyA gayA WA
+root:banA
+tam:yA_gayA_WA(m,s,a)
+root:banA
+tam:yA_gayA_WA(m,s,m)
+root:banA
+tam:yA_gayA_WA(m,s,u)
+---
+xiKA rahA hE
+root:xiKA
+tam:0_rahA_hE(f,s,a)
+root:xiKA
+tam:0_rahA_hE(f,s,m)
+root:xiKa
+tam:yA_rahA_hE(m,s,a)
+root:xiKa
+tam:yA_rahA_hE(m,s,m)
+root:xiKA
+tam:0_rahA_hE(m,s,a)
+root:xiKA
+tam:0_rahA_hE(m,s,m)
+---
+jAnA jAwA hE
+root:jAna
+tam:yA_jAwA_hE(m,s,a)
+root:jAna
+tam:yA_jAwA_hE(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+jAnawe We
+root:jAna
+tam:wA_WA(m,p,m)
+root:jAna
+tam:wA_WA(m,p,u)
+---
+mAnA jAwA
+root:mAna
+tam:yA_jAwA(m,s,m)
+---
+pUCA
+root:pUCa
+tam:yA(m,s,a)
+root:pUCa
+tam:yA(m,s,m)
+root:pUCa
+tam:yA(m,s,u)
+root:pUCa
+tam:yA(m,p,a)
+root:pUCa
+tam:yA(m,p,m)
+root:pUCa
+tam:yA(m,p,u)
+---
+jAnA jAwA hE
+root:jAna
+tam:yA_jAwA_hE(m,s,a)
+root:jAna
+tam:yA_jAwA_hE(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+xie jAwe hEM
+root:xe
+tam:yA_jAwA_hE(m,p,u)
+---
+bawAwA hE
+root:bawA
+tam:wA_hE(m,s,a)
+root:bawA
+tam:wA_hE(m,s,m)
+---
+jAnA jAwA hE
+root:jAna
+tam:yA_jAwA_hE(m,s,a)
+root:jAna
+tam:yA_jAwA_hE(m,s,m)
+---
+sIKawA hE
+root:sIKa
+tam:wA_hE(m,s,a)
+root:sIKa
+tam:wA_hE(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+Koja rahA hE
+root:Koja
+tam:0_rahA_hE(m,s,a)
+root:Koja
+tam:0_rahA_hE(m,s,m)
+root:Koja
+tam:0_rahA_hE(f,s,a)
+root:Koja
+tam:0_rahA_hE(f,s,m)
+---
+laga rahA hE
+root:laga
+tam:0_rahA_hE(f,s,a)
+root:laga
+tam:0_rahA_hE(f,s,m)
+root:laga
+tam:0_rahA_hE(m,s,a)
+root:laga
+tam:0_rahA_hE(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+gira rahA hE
+root:gira
+tam:0_rahA_hE(f,s,a)
+root:gira
+tam:0_rahA_hE(f,s,m)
+root:gira
+tam:0_rahA_hE(m,s,a)
+root:gira
+tam:0_rahA_hE(m,s,m)
+---
+cAhawe hEM
+root:cAha
+tam:wA_hE(m,p,u)
+root:cAha
+tam:wA_hE(m,p,a)
+---
+bana jAwA hE
+root:bana
+tam:0_jAwA_hE(f,s,a)
+root:bana
+tam:0_jAwA_hE(f,s,m)
+root:bana
+tam:0_jAwA_hE(m,s,a)
+root:bana
+tam:0_jAwA_hE(m,s,m)
+---
+jAnA jAwA hE
+root:jAna
+tam:yA_jAwA_hE(m,s,a)
+root:jAna
+tam:yA_jAwA_hE(m,s,m)
+---
+Koja sakawe hEM
+root:Koja
+tam:0_sakawA_hE(m,p,u)
+root:Koja
+tam:0_sakawA_hE(f,p,u)
+---
+le sakawe hEM
+root:le
+tam:0_sakawA_hE(f,p,u)
+root:le
+tam:0_sakawA_hE(m,p,u)
+---
+calAyA jAwA hE
+root:calA
+tam:yA_jAwA_hE(m,s,a)
+root:calA
+tam:yA_jAwA_hE(m,s,m)
+---
+samaJAwe hEM
+root:samaJA
+tam:wA_hE(m,p,u)
+root:samaJA
+tam:wA_hE(m,p,a)
+---
+socA jA sakawA hE
+root:soca
+tam:yA_jA_sakawA_hE(m,s,a)
+root:soca
+tam:yA_jA_sakawA_hE(m,s,m)
+---
+bola rahe hEM
+root:bola
+tam:0_rahA_hE(f,p,u)
+root:bola
+tam:0_rahA_hE(m,p,u)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+basa hE
+root:basa
+tam:0_hE(m,s,a)
+root:basa
+tam:0_hE(f,s,a)
+---
+banAyA gayA hE
+root:banA
+tam:yA_gayA_hE(m,s,a)
+root:banA
+tam:yA_gayA_hE(m,s,m)
+---
+soca sakawe hEM
+root:soca
+tam:0_sakawA_hE(m,p,u)
+root:soca
+tam:0_sakawA_hE(f,p,u)
+---
+socA jA sakawA hE
+root:soca
+tam:yA_jA_sakawA_hE(m,s,a)
+root:soca
+tam:yA_jA_sakawA_hE(m,s,m)
+---
+kahawe hEM
+root:kaha
+tam:wA_hE(m,p,u)
+root:kaha
+tam:wA_hE(m,p,a)
+---
+mila rahA hE
+root:mila
+tam:0_rahA_hE(m,s,a)
+root:mila
+tam:0_rahA_hE(m,s,m)
+root:mila
+tam:0_rahA_hE(f,s,a)
+root:mila
+tam:0_rahA_hE(f,s,m)
+---
+samaJAwe hEM
+root:samaJA
+tam:wA_hE(m,p,u)
+root:samaJA
+tam:wA_hE(m,p,a)
+---
+banA sakawe hEM
+root:banA
+tam:0_sakawA_hE(f,p,u)
+root:banA
+tam:0_sakawA_hE(m,p,u)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+soca sakawe hEM
+root:soca
+tam:0_sakawA_hE(m,p,u)
+root:soca
+tam:0_sakawA_hE(f,p,u)
+---
+xiyA gayA
+root:xe
+tam:yA_gayA(m,s,m)
+---
+liKA hE
+root:liKA
+tam:0_hE(f,s,a)
+root:liKa
+tam:yA_hE(m,s,a)
+root:liKa
+tam:yA_hE(m,s,m)
+root:liKA
+tam:0_hE(m,s,a)
+---
+KIMce jA sakawe hEM
+root:KIMca
+tam:yA_jA_sakawA_hE(m,p,u)
+---
+xarSAwA hE
+root:xarSA
+tam:wA_hE(m,s,a)
+root:xarSA
+tam:wA_hE(m,s,m)
+---
+xe sakawe hEM
+root:xe
+tam:0_sakawA_hE(f,p,u)
+root:xe
+tam:0_sakawA_hE(m,p,u)
+---
+xarSAyA gayA
+root:xarSA
+tam:yA_gayA(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+xeKa rahA hUz
+root:xeKa
+tam:0_rahA_hE(f,s,u)
+root:xeKa
+tam:0_rahA_hE(m,s,u)
+---
+xiyA gayA
+root:xe
+tam:yA_gayA(m,s,m)
+---
+xarSAwA hE
+root:xarSA
+tam:wA_hE(m,s,a)
+root:xarSA
+tam:wA_hE(m,s,m)
+---
+xewA hE
+root:xe
+tam:wA_hE(m,s,a)
+root:xe
+tam:wA_hE(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+liKA WA
+root:liKa
+tam:yA_WA(m,s,m)
+---
+xiKA rahA hE
+root:xiKA
+tam:0_rahA_hE(f,s,a)
+root:xiKA
+tam:0_rahA_hE(f,s,m)
+root:xiKa
+tam:yA_rahA_hE(m,s,a)
+root:xiKa
+tam:yA_rahA_hE(m,s,m)
+root:xiKA
+tam:0_rahA_hE(m,s,a)
+root:xiKA
+tam:0_rahA_hE(m,s,m)
+---
+xiKA rahA hE
+root:xiKA
+tam:0_rahA_hE(f,s,a)
+root:xiKA
+tam:0_rahA_hE(f,s,m)
+root:xiKa
+tam:yA_rahA_hE(m,s,a)
+root:xiKa
+tam:yA_rahA_hE(m,s,m)
+root:xiKA
+tam:0_rahA_hE(m,s,a)
+root:xiKA
+tam:0_rahA_hE(m,s,m)
+---
+cAhawe hEM
+root:cAha
+tam:wA_hE(m,p,u)
+root:cAha
+tam:wA_hE(m,p,a)
+---
+xiKA rahA hE
+root:xiKA
+tam:0_rahA_hE(f,s,a)
+root:xiKA
+tam:0_rahA_hE(f,s,m)
+root:xiKa
+tam:yA_rahA_hE(m,s,a)
+root:xiKa
+tam:yA_rahA_hE(m,s,m)
+root:xiKA
+tam:0_rahA_hE(m,s,a)
+root:xiKA
+tam:0_rahA_hE(m,s,m)
+---
+mAna lenA
+root:mAna
+tam:0_lenA(m,s,m)
+root:mAna
+tam:0_lenA(f,s,m)
+---
+bana gayA hE
+root:bana
+tam:0_gayA_hE(f,s,a)
+root:bana
+tam:0_gayA_hE(f,s,m)
+root:bana
+tam:0_gayA_hE(m,s,a)
+root:bana
+tam:0_gayA_hE(m,s,m)
+---
+sulaJa cukA hE
+root:sulaJa
+tam:0_cukA_hE(f,s,a)
+root:sulaJa
+tam:0_cukA_hE(f,s,m)
+root:sulaJa
+tam:0_cukA_hE(m,s,a)
+root:sulaJa
+tam:0_cukA_hE(m,s,m)
+---
+baxala rahA hE
+root:baxala
+tam:0_rahA_hE(f,s,a)
+root:baxala
+tam:0_rahA_hE(f,s,m)
+root:baxala
+tam:0_rahA_hE(m,s,a)
+root:baxala
+tam:0_rahA_hE(m,s,m)
+---
+calA gayA hE
+root:calA
+tam:0_gayA_hE(f,s,a)
+root:calA
+tam:0_gayA_hE(f,s,m)
+root:cala
+tam:yA_gayA_hE(m,s,a)
+root:cala
+tam:yA_gayA_hE(m,s,m)
+root:calA
+tam:0_gayA_hE(m,s,a)
+root:calA
+tam:0_gayA_hE(m,s,m)
+---
+bulAyA jA rahA hE
+root:bulA
+tam:yA_jA_rahA_hE(m,s,a)
+root:bulA
+tam:yA_jA_rahA_hE(m,s,m)
+---
+bola rahA hUz
+root:bola
+tam:0_rahA_hE(f,s,u)
+root:bola
+tam:0_rahA_hE(m,s,u)
+---
+kara cuke hEM
+root:kara
+tam:0_cukA_hE(m,p,u)
+root:kara
+tam:0_cukA_hE(f,p,u)
+---
+jAnA jAwA
+root:jAna
+tam:yA_jAwA(m,s,m)
+---
+jAnA jAwA
+root:jAna
+tam:yA_jAwA(m,s,m)
+---
+huA WA
+root:ho
+tam:yA_WA(m,s,m)
+---
+calA gayA hE
+root:calA
+tam:0_gayA_hE(f,s,a)
+root:calA
+tam:0_gayA_hE(f,s,m)
+root:cala
+tam:yA_gayA_hE(m,s,a)
+root:cala
+tam:yA_gayA_hE(m,s,m)
+root:calA
+tam:0_gayA_hE(m,s,a)
+root:calA
+tam:0_gayA_hE(m,s,m)
+---
+jAwA hE
+root:jA
+tam:wA_hE(m,s,a)
+root:jA
+tam:wA_hE(m,s,m)
+---
+jAnA jAwA WA
+root:jAna
+tam:yA_jAwA_WA(m,s,a)
+root:jAna
+tam:yA_jAwA_WA(m,s,m)
+root:jAna
+tam:yA_jAwA_WA(m,s,u)
+---
+pahacAna sakawe We
+root:pahacAna
+tam:0_sakawA_WA(m,p,m)
+root:pahacAna
+tam:0_sakawA_WA(m,p,u)
+root:pahacAna
+tam:0_sakawA_WA(f,p,m)
+root:pahacAna
+tam:0_sakawA_WA(f,p,u)
+---
+bana gayA
+root:bana
+tam:0_gayA(f,s,m)
+root:bana
+tam:0_gayA(m,s,m)
+---
+sIKa sakawe We
+root:sIKa
+tam:0_sakawA_WA(m,p,m)
+root:sIKa
+tam:0_sakawA_WA(m,p,u)
+root:sIKa
+tam:0_sakawA_WA(f,p,m)
+root:sIKa
+tam:0_sakawA_WA(f,p,u)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+bane raheM
+root:bana
+tam:yA_raha_subj(m,p,a)
+root:bana
+tam:yA_raha_subj(m,p,u)
+---
+kahawe hEM
+root:kaha
+tam:wA_hE(m,p,u)
+root:kaha
+tam:wA_hE(m,p,a)
+---
+bane raheM
+root:bana
+tam:yA_raha_subj(m,p,a)
+root:bana
+tam:yA_raha_subj(m,p,u)
+---
+mAnA jAwA hE
+root:mAna
+tam:yA_jAwA_hE(m,s,a)
+root:mAna
+tam:yA_jAwA_hE(m,s,m)
+---
+xe cuke hEM
+root:xe
+tam:0_cukA_hE(f,p,u)
+root:xe
+tam:0_cukA_hE(m,p,u)
+---
+pAyA hE
+root:pA
+tam:yA_hE(m,s,a)
+root:pA
+tam:yA_hE(m,s,m)
+---
+sIKa sakawe hEM
+root:sIKa
+tam:0_sakawA_hE(m,p,u)
+root:sIKa
+tam:0_sakawA_hE(f,p,u)
+---
+ho rahA hE
+root:ho
+tam:0_rahA_hE(f,s,a)
+root:ho
+tam:0_rahA_hE(f,s,m)
+root:ho
+tam:0_rahA_hE(m,s,a)
+root:ho
+tam:0_rahA_hE(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+uBare
+root:uBara
+tam:yA(m,s,a)
+root:uBara
+tam:yA(m,s,m)
+root:uBara
+tam:yA(m,s,u)
+root:uBara
+tam:yA(m,p,a)
+root:uBara
+tam:yA(m,p,m)
+root:uBara
+tam:yA(m,p,u)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+uTA
+root:uTa
+tam:yA(m,s,a)
+root:uTa
+tam:yA(m,s,m)
+root:uTa
+tam:yA(m,s,u)
+root:uTa
+tam:yA(m,p,a)
+root:uTa
+tam:yA(m,p,m)
+root:uTa
+tam:yA(m,p,u)
+---
+paDZA-liKA
+root:liKa
+tam:yA(m,s,a)
+root:liKa
+tam:yA(m,s,m)
+root:liKa
+tam:yA(m,s,u)
+root:liKa
+tam:yA(m,p,a)
+root:liKa
+tam:yA(m,p,m)
+root:liKa
+tam:yA(m,p,u)
+---
+karawA hE
+root:kara
+tam:wA_hE(m,s,a)
+root:kara
+tam:wA_hE(m,s,m)
+---
+uTA
+root:uTa
+tam:yA(m,s,a)
+root:uTa
+tam:yA(m,s,m)
+root:uTa
+tam:yA(m,s,u)
+root:uTa
+tam:yA(m,p,a)
+root:uTa
+tam:yA(m,p,m)
+root:uTa
+tam:yA(m,p,u)
+---
+bane raheM
+root:bana
+tam:yA_raha_subj(m,p,a)
+root:bana
+tam:yA_raha_subj(m,p,u)
+---
+pahacAna sakawe hEM
+root:pahacAna
+tam:0_sakawA_hE(m,p,u)
+root:pahacAna
+tam:0_sakawA_hE(f,p,u)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+bawAyA jAwA hE
+root:bawA
+tam:yA_jAwA_hE(m,s,a)
+root:bawA
+tam:yA_jAwA_hE(m,s,m)
+---
+banAyA gayA
+root:banA
+tam:yA_gayA(m,s,m)
+---
+calA gayA
+root:calA
+tam:0_gayA(f,s,m)
+root:cala
+tam:yA_gayA(m,s,m)
+root:calA
+tam:0_gayA(m,s,m)
+---
+banAyA gayA
+root:banA
+tam:yA_gayA(m,s,m)
+---
+calA gayA
+root:calA
+tam:0_gayA(f,s,m)
+root:cala
+tam:yA_gayA(m,s,m)
+root:calA
+tam:0_gayA(m,s,m)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+bulAyA gayA
+root:bulA
+tam:yA_gayA(m,s,m)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+calAyA gayA hE
+root:calA
+tam:yA_gayA_hE(m,s,a)
+root:calA
+tam:yA_gayA_hE(m,s,m)
+---
+le lo
+root:le
+tam:0_le_subj(f,p,m)
+root:le
+tam:0_le_subj(m,p,m)
+---
+karawe hEM
+root:kara
+tam:wA_hE(m,p,u)
+root:kara
+tam:wA_hE(m,p,a)
+---
+bana jAwA hE
+root:bana
+tam:0_jAwA_hE(f,s,a)
+root:bana
+tam:0_jAwA_hE(f,s,m)
+root:bana
+tam:0_jAwA_hE(m,s,a)
+root:bana
+tam:0_jAwA_hE(m,s,m)
+---
+paDZA-liKA
+root:liKa
+tam:yA(m,s,a)
+root:liKa
+tam:yA(m,s,m)
+root:liKa
+tam:yA(m,s,u)
+root:liKa
+tam:yA(m,p,a)
+root:liKa
+tam:yA(m,p,m)
+root:liKa
+tam:yA(m,p,u)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+baxala gayA
+root:baxala
+tam:0_gayA(f,s,m)
+root:baxala
+tam:0_gayA(m,s,m)
+---
+banA cuke hEM
+root:banA
+tam:0_cukA_hE(f,p,u)
+root:banA
+tam:0_cukA_hE(m,p,u)
+---
+xeKa rahA hUz
+root:xeKa
+tam:0_rahA_hE(f,s,u)
+root:xeKa
+tam:0_rahA_hE(m,s,u)
+---
+rahA hE
+root:raha
+tam:yA_hE(m,s,a)
+root:raha
+tam:yA_hE(m,s,m)
+---
+le sakawe hEM
+root:le
+tam:0_sakawA_hE(f,p,u)
+root:le
+tam:0_sakawA_hE(m,p,u)
+---
+xeKA jAwA hE
+root:xeKa
+tam:yA_jAwA_hE(m,s,a)
+root:xeKa
+tam:yA_jAwA_hE(m,s,m)
+---
+kara cuke hEM
+root:kara
+tam:0_cukA_hE(m,p,u)
+root:kara
+tam:0_cukA_hE(f,p,u)
+---
+kara cuke hEM
+root:kara
+tam:0_cukA_hE(m,p,u)
+root:kara
+tam:0_cukA_hE(f,p,u)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+calAyA gayA hE
+root:calA
+tam:yA_gayA_hE(m,s,a)
+root:calA
+tam:yA_gayA_hE(m,s,m)
+---
+ho sakawA hE
+root:ho
+tam:0_sakawA_hE(f,s,a)
+root:ho
+tam:0_sakawA_hE(f,s,m)
+root:ho
+tam:0_sakawA_hE(m,s,a)
+root:ho
+tam:0_sakawA_hE(m,s,m)
+---
+rahA hE
+root:raha
+tam:yA_hE(m,s,a)
+root:raha
+tam:yA_hE(m,s,m)
+---
+pahacAna sakawe We
+root:pahacAna
+tam:0_sakawA_WA(m,p,m)
+root:pahacAna
+tam:0_sakawA_WA(m,p,u)
+root:pahacAna
+tam:0_sakawA_WA(f,p,m)
+root:pahacAna
+tam:0_sakawA_WA(f,p,u)
+---
+AyA WA
+root:A
+tam:yA_WA(m,s,m)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+xiKAyA gayA
+root:xiKA
+tam:yA_gayA(m,s,m)
+---
+sIKa sakawe We
+root:sIKa
+tam:0_sakawA_WA(m,p,m)
+root:sIKa
+tam:0_sakawA_WA(m,p,u)
+root:sIKa
+tam:0_sakawA_WA(f,p,m)
+root:sIKa
+tam:0_sakawA_WA(f,p,u)
+---
+sIKa sakawe hEM
+root:sIKa
+tam:0_sakawA_hE(m,p,u)
+root:sIKa
+tam:0_sakawA_hE(f,p,u)
+---
+sIKa sakawe hEM
+root:sIKa
+tam:0_sakawA_hE(m,p,u)
+root:sIKa
+tam:0_sakawA_hE(f,p,u)
+---
+xiyA gayA
+root:xe
+tam:yA_gayA(m,s,m)
+---
