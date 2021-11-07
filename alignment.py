@@ -41,7 +41,7 @@ def lwg_process(e_h_lwg):
     return lwg_wd, lwg_hwd
 
 
-def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_dic_processed):
+def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic):
 
     # function to align the English and Hindi sen
     # input : E_sen, H_sen, E_H_dic, E_H_dic controlled (user made)
@@ -51,6 +51,7 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
     H_wds = E_H_sen.split('\t')[1].split()
     E_root_wds = get_root(E_morph)
     H_root_wds = get_root(H_morph)
+
 
     #add all root words in hindi list
     for key in H_root_wds:
@@ -75,6 +76,23 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
                 break
 
 
+    #for tam processing using tam dic
+
+    E_tam, E_root, E_vb, E_lwg = get_eng_tam_from_sbn(sbn_line)
+
+    if('No' not in E_tam):
+        h_eq_tam = e_h_tam_dic[E_tam]
+        h_eq_tam_all_form = list(set(h_tam_all_form_dic[h_eq_tam]))
+
+        e_h_lwg_dic = get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, E_vb, E_lwg, h_eq_tam_all_form)
+
+        for key in e_h_lwg_dic:
+            E_H_aligned['_'.join(key.split())] = '_'.join(e_h_lwg_dic[key].split())
+            for wd in key.split():
+                if wd in E_H_aligned: del E_H_aligned[wd]
+
+
+    '''
     #for lwg processing
     if len(e_h_lwg) > 0:
         lwg_wd, lwg_hwd = lwg_process(e_h_lwg)
@@ -85,6 +103,7 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
             for wd in lwg_wd:
                 if wd in E_H_aligned: del E_H_aligned[wd]
 
+    '''
     #for left over words to check meaning from controlled dic:
     for wd in E_wds:
         if wd not in E_H_aligned:
@@ -161,14 +180,86 @@ with open(sys.argv[6], 'r') as f:
         E_H_controlled_dic_processed[eng_wd] = hnd_wd
 
 #read sbn files
-dirs = os.listdir(sys.argv[7])
+dirs = sorted(os.listdir(sys.argv[7]))
 sbn = []
 for d in dirs:
     with open(sys.argv[7]+'/'+d+'/en.drs.sbn', 'r') as f:
         sbn.append(f.readlines())
 
-for sen, e_morph, h_morph, e_h_lwg in zip(E_H_sen, E_morph, H_morph, E_H_lwg):
-    E_H_aligned = align(sen.strip(), e_morph, h_morph, e_h_lwg.strip(), E_H_dic_processed, E_H_controlled_dic_processed)
+
+#read eng_hnd_tam list
+with open(sys.argv[8], 'r') as f:
+    e_h_tam = f.readlines()
+    e_h_tam_dic = {}
+    for line in e_h_tam:
+        if(len(line.strip()) > 0):
+            e_tam = line.split(';')[0].strip('"')
+            h_tam = line.split(';')[1].strip('"').split('{')[0]
+            e_h_tam_dic[e_tam] = h_tam
+
+
+#read hnd_tam all forms
+with open(sys.argv[9], 'r') as f:
+    h_tam_all_form = f.readlines()
+    h_tam_all_form_dic = {}
+    for line in h_tam_all_form:
+        h_tam = line.split(',')[0]
+        h_form = line.split()[1].strip()
+        if h_tam in h_tam_all_form_dic:
+            h_tam_all_form_dic[h_tam].append(h_form)
+        else:
+            h_tam_all_form_dic[h_tam] = [h_form]
+
+
+#compute tam information from sbn data
+def get_eng_tam_from_sbn(sbn_data):
+
+    found = 0
+
+    for line in sbn_data:
+        if '.v.' in line:
+            root = line.split()[0].split('.')[0]
+            wd = line.split('%')[1].split('[')[0].strip().split()[0]
+            if 'Time -1' in line:
+                index = sbn_data.index(line)
+                prev_line = sbn_data[index-1]
+                aux = prev_line.split('%')[1].split('[')[0].strip().split()[0]
+
+                if(re.match(r'.*ing$',wd)):
+                    return(aux+'_ing', root, wd, [aux, wd])
+
+                elif (re.match(r'.*ed$', wd) and 'was' in prev_line):
+                    return(aux+'_en', root, wd, [aux, wd])
+                else:
+                    print('no')
+                    return('No_tam', root, wd, wd)
+                found = 1
+
+    if not found:
+            return ('No', 'No', 'No', 'No')
+
+
+def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, E_vb, E_lwg, h_eq_tam_all_form):
+
+    tam_eng_hnd = {}
+    for tam in h_eq_tam_all_form:
+        if('0_' in tam):
+            tam_list = tam.split('_')[1:]
+        else:
+            tam_list = tam.split('_')
+
+        if ' '.join(tam_list) in ' '.join(H_wds):
+            if E_vb in E_H_aligned:
+                tam_eng_hnd[' '.join(E_lwg)] = E_H_aligned[E_vb]+' '+' '.join(tam_list)
+            break
+
+    return tam_eng_hnd
+
+
+
+
+for sen, e_morph, h_morph, e_h_lwg, sbn_line in zip(E_H_sen, E_morph, H_morph, E_H_lwg, sbn):
+    E_H_aligned = align(sen.strip(), e_morph, h_morph, e_h_lwg.strip(), E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic)
     print(sen.strip())
     print(E_H_aligned)
     print('---------')

@@ -7,4 +7,4 @@ cut -f 1 E_H_sen-wx.txt > eng
 cut -f 2 E_H_sen-wx.txt > hnd
 lt-proc -a en.morf.bin eng > eng_morph
 lt-proc -c -a hi.morf.bin hnd > hnd_morph
-python alignment.py  E_H_dictionary E_H_sen-wx.txt eng_morph hnd_morph lwg_eng_hnd controlled_dictionary.txt pmb-data
+python alignment.py  E_H_dictionary E_H_sen-wx.txt eng_morph hnd_morph lwg_eng_hnd controlled_dictionary.txt pmb-data e_h_tam_list-wx hnd_tam_all_form
