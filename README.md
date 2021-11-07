@@ -1,4 +1,4 @@
-File:
+### File:
 
 alignment.py : main program
 controlled_dictionary.txt : User dictionary
@@ -10,15 +10,15 @@ README: Readme file
 run.sh: Shell script to run the program
 
 
-Requirements:
+### Requirements:
 
 lt-proc
 
 
-To Run:
+### To Run:
 
 sh run.sh
 
-Output:
+### Output:
 
 Output will be given to STDOUT
