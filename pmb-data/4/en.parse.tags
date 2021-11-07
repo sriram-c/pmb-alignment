@@ -1,0 +1,21 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ rp(s:dcl,
+  fa(s:dcl,
+   fa(s:dcl/(s:dcl/np),
+    t((s:dcl/(s:dcl/np))/np, 'What', [from:0, to:4, pos:'WP', lemma:'what', sem:'EMP', wordnet:'O']),
+    fa(np,
+     t(np/n, 'a', [from:5, to:6, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     fa(n,
+      t(n/n, 'tall', [from:7, to:11, pos:'JJ', lemma:'tall', sem:'DEG', wordnet:'tall.a.01', verbnet:['Attribute']]),
+      t(n, 'tree', [from:12, to:16, pos:'NN', lemma:'tree', sem:'CON', wordnet:'tree.n.01'])))),
+   fc(s:dcl/np,
+    lx(s:X/(s:X\np), np,
+     t(np, 'it', [from:17, to:19, pos:'PRP', lemma:'entity', sem:'PRO', wordnet:'entity.n.01'])),
+    t((s:dcl\np)/np, 'is', [from:20, to:22, pos:'VBZ', lemma:'be', sem:'ENS', wordnet:'be.v.01', verbnet:['Co-Theme','Theme']]))),
+  t(., '!', [from:22, to:23, pos:'.', lemma:'!', sem:'EMP', wordnet:'O']))).
+

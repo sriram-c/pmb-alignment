@@ -1,6 +1,7 @@
 #Program to align example sentences
 import sys
 import re
+import os
 
 def get_root(morph):
     root_wds = {}
@@ -119,6 +120,16 @@ def dic_process(E_H_dic):
     return  E_H_dic_processed
 
 
+def pmb_sbn_process(sbn_data):
+    #processes the sbn data for each sentence
+    for line in sbn_data:
+        if('.v.' in line):
+            verb = line.split()[0]
+
+
+
+
+
 #Read English Hindi dictionary
 with open(sys.argv[1], 'r')as f:
     E_H_dic = f.readlines()
@@ -148,6 +159,13 @@ with open(sys.argv[6], 'r') as f:
         eng_wd = line.split('\t')[0]
         hnd_wd = line.split('\t')[1].strip()
         E_H_controlled_dic_processed[eng_wd] = hnd_wd
+
+#read sbn files
+dirs = os.listdir(sys.argv[7])
+sbn = []
+for d in dirs:
+    with open(sys.argv[7]+'/'+d+'/en.drs.sbn', 'r') as f:
+        sbn.append(f.readlines())
 
 for sen, e_morph, h_morph, e_h_lwg in zip(E_H_sen, E_morph, H_morph, E_H_lwg):
     E_H_aligned = align(sen.strip(), e_morph, h_morph, e_h_lwg.strip(), E_H_dic_processed, E_H_controlled_dic_processed)

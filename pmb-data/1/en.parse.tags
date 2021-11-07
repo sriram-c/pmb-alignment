@@ -1,0 +1,16 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Men', [from:0, to:3, pos:'NNS', lemma:'man', sem:'CON', wordnet:'man.n.01'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/(s:ng\np), 'are', [from:4, to:7, pos:'VBP', lemma:'be', sem:'NOW', wordnet:'O']),
+   fa(s:ng\np,
+    t((s:ng\np)/np, 'cutting', [from:8, to:15, pos:'VBG', lemma:'cut', sem:'EXG', wordnet:'cut.v.01', verbnet:['Patient','Agent']]),
+    lx(np, n,
+     t(n, 'wood', [from:16, to:20, pos:'NN', lemma:'wood', sem:'CON', wordnet:'wood.n.01'])))))).
+
