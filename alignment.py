@@ -14,8 +14,22 @@ def get_root(morph):
                 rt_list.append(root_wd)
             elif '^' in rt:
                 org_wd = re.match(r'^\^(.*)$', rt)[1]
-        root_wds[org_wd] = list(set(rt_list))
-    return root_wds
+
+        rt_list_final = list(set(rt_list))
+        if(len(rt_list_final) > 0):
+            root_wds[org_wd] = list(set(rt_list))
+        else:
+            root_wds[org_wd] = [org_wd]
+
+
+    #make a reverse list root -> surface form
+    root_wds_rev = {}
+    for key in root_wds:
+        val = root_wds[key]
+        for l in val:
+            root_wds_rev[l]= key
+
+    return root_wds, root_wds_rev
 
 
 def lwg_process(e_h_lwg):
@@ -49,21 +63,16 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
 
     E_wds = E_H_sen.split('\t')[0].split()
     H_wds = E_H_sen.split('\t')[1].split()
-    E_root_wds = get_root(E_morph)
-    H_root_wds = get_root(H_morph)
+    E_root_wds, E_root_wds_rev = get_root(E_morph)
+    H_root_wds, H_root_wds_rev = get_root(H_morph)
 
 
-    #add all root words in hindi list
-    H_root_wds_sen = []
+    H_root_wds_list = []
     for key in H_root_wds:
-
-        H_wds.extend(H_root_wds[key])
-        if (len(H_root_wds[key]) > 0):
-            H_root_wds_sen.append(H_root_wds[key])
-        else:
-            H_root_wds_sen.append(key)
+        H_root_wds_list.extend(H_root_wds[key])
 
 
+    E_tam, E_root, E_vb, E_lwg = get_eng_tam_from_sbn(sbn_line)
 
     E_H_aligned = {}
 
@@ -81,13 +90,14 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
 
         #
         for hwd in h_dic_wd:
-            if hwd in H_wds:
-                E_H_aligned[ewd] = hwd
-                break
+            if hwd in H_wds or hwd in H_root_wds_list:
+                    E_H_aligned[ewd] = H_root_wds_rev[hwd]
+                    break
             else:
-                if('_' in hwd):
-                    if(hwd.split('_')[0] in H_wds):
-                        E_H_aligned[ewd] = hwd
+                if('_' in hwd) and ewd == E_vb:
+                    kriyA_mula = hwd.split('_')[0]
+                    if(kriyA_mula in H_wds):
+                        E_H_aligned[ewd] = H_root_wds_rev[kriyA_mula]
                         break
 
 
@@ -95,7 +105,6 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
 
     #for tam processing using tam dic
 
-    E_tam, E_root, E_vb, E_lwg = get_eng_tam_from_sbn(sbn_line)
 
 
     if('No' not in E_tam):
@@ -127,8 +136,8 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
         if wd not in E_H_aligned:
             if wd in E_H_controlled_dic_processed:
                 hwd = E_H_controlled_dic_processed[wd]
-                if set(wd.split('_')).issubset(set(H_wds)):
-                    E_H_aligned[wd] = hwd.split('_')
+                if set(hwd.split('_')).issubset(set(H_wds)):
+                    E_H_aligned[wd] = hwd
 
     return E_H_aligned
 
