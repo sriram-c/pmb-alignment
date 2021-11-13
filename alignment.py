@@ -97,7 +97,7 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
                 if('_' in hwd) and ewd == E_vb:
                     kriyA_mula = hwd.split('_')[0]
                     if(kriyA_mula in H_wds):
-                        E_H_aligned[ewd] = H_root_wds_rev[kriyA_mula]
+                        E_H_aligned[ewd] = hwd
                         break
 
 
@@ -287,6 +287,7 @@ def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, H_root_wds, E_wds, E_vb, E_lw
                     if kriyA_in_sen_root in kriyA:
                         E_H_aligned[E_vb] = kriyA_mula+'_'+kriyA_in_sen
                         tam_list = tam_list[1:]
+
                 tam_eng_hnd[' '.join(E_lwg)] = E_H_aligned[E_vb]+' '+' '.join(tam_list)
             break
 
