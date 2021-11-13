@@ -12,11 +12,12 @@ The objective of this tool is to Align English and HIndi sentences in the PMB(pa
 * hi.morf.bin: lt-proc file for Hindi Morph
 * README: Readme file
 * run.sh: Shell script to run the program
-* 
+ 
 
 ### Requirements:
 
 lt-proc
+python 3.0 or higher
 
 
 ### To Run:

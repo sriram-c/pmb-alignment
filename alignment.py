@@ -54,37 +54,55 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
 
 
     #add all root words in hindi list
+    H_root_wds_sen = []
     for key in H_root_wds:
+
         H_wds.extend(H_root_wds[key])
+        if (len(H_root_wds[key]) > 0):
+            H_root_wds_sen.append(H_root_wds[key])
+        else:
+            H_root_wds_sen.append(key)
+
 
 
     E_H_aligned = {}
 
-    #match original word
     for ewd in E_wds:
         h_dic_wd = []
+
+        # match original word lower case
         if ewd.lower() in E_H_dic_processed:
             h_dic_wd.extend(E_H_dic_processed[ewd.lower()])
 
+        #match root word
         for rt_wd in E_root_wds[ewd]:
             if rt_wd.lower() in E_H_dic_processed:
                 h_dic_wd.extend(E_H_dic_processed[rt_wd.lower()])
 
+        #
         for hwd in h_dic_wd:
             if hwd in H_wds:
                 E_H_aligned[ewd] = hwd
                 break
+            else:
+                if('_' in hwd):
+                    if(hwd.split('_')[0] in H_wds):
+                        E_H_aligned[ewd] = hwd
+                        break
+
+
 
 
     #for tam processing using tam dic
 
     E_tam, E_root, E_vb, E_lwg = get_eng_tam_from_sbn(sbn_line)
 
+
     if('No' not in E_tam):
         h_eq_tam = e_h_tam_dic[E_tam]
         h_eq_tam_all_form = list(set(h_tam_all_form_dic[h_eq_tam]))
 
-        e_h_lwg_dic = get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, E_vb, E_lwg, h_eq_tam_all_form)
+        e_h_lwg_dic = get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, H_root_wds, E_wds, E_vb, E_lwg, h_eq_tam_all_form)
 
         for key in e_h_lwg_dic:
             E_H_aligned['_'.join(key.split())] = '_'.join(e_h_lwg_dic[key].split())
@@ -231,7 +249,6 @@ def get_eng_tam_from_sbn(sbn_data):
                 elif (re.match(r'.*ed$', wd) and 'was' in prev_line):
                     return(aux+'_en', root, wd, [aux, wd])
                 else:
-                    print('no')
                     return('No_tam', root, wd, wd)
                 found = 1
 
@@ -239,7 +256,7 @@ def get_eng_tam_from_sbn(sbn_data):
             return ('No', 'No', 'No', 'No')
 
 
-def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, E_vb, E_lwg, h_eq_tam_all_form):
+def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, H_root_wds, E_wds, E_vb, E_lwg, h_eq_tam_all_form):
 
     tam_eng_hnd = {}
     for tam in h_eq_tam_all_form:
@@ -250,6 +267,17 @@ def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, E_vb, E_lwg, h_eq_tam_all_for
 
         if ' '.join(tam_list) in ' '.join(H_wds):
             if E_vb in E_H_aligned:
+                h_eq = E_H_aligned[E_vb]
+                #for handling kriyA_mula
+                if '_' in h_eq:
+                    kriyA_mula = h_eq.split('_')[0]
+                    kriyA = h_eq.split('_')[1]
+                    index = H_wds.index(kriyA_mula)
+                    kriyA_in_sen = H_wds[index+1]
+                    kriyA_in_sen_root = H_root_wds[kriyA_in_sen][0]
+                    if kriyA_in_sen_root in kriyA:
+                        E_H_aligned[E_vb] = kriyA_mula+'_'+kriyA_in_sen
+                        tam_list = tam_list[1:]
                 tam_eng_hnd[' '.join(E_lwg)] = E_H_aligned[E_vb]+' '+' '.join(tam_list)
             break
 
