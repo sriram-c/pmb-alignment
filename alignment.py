@@ -2,6 +2,7 @@
 import sys
 import re
 import os
+import subprocess
 
 def get_root(morph):
     root_wds = {}
@@ -13,7 +14,8 @@ def get_root(morph):
                 root_wd = re.match(r'^([^<])*', rt)[0]
                 rt_list.append(root_wd)
             elif '^' in rt:
-                org_wd = re.match(r'^\^(.*)$', rt)[1]
+                if re.match(r'^\^(.*)$', rt):
+                    org_wd = re.match(r'^\^(.*)$', rt)[1]
 
         rt_list_final = list(set(rt_list))
         if(len(rt_list_final) > 0):
@@ -55,7 +57,8 @@ def lwg_process(e_h_lwg):
     return lwg_wd, lwg_hwd
 
 
-def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic):
+#def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic):
+def align(E_H_sen, E_morph, H_morph, E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic):
 
     # function to align the English and Hindi sen
     # input : E_sen, H_sen, E_H_dic, E_H_dic controlled (user made)
@@ -84,13 +87,17 @@ def align(E_H_sen, E_morph, H_morph, e_h_lwg, E_H_dic_processed, E_H_controlled_
             h_dic_wd.extend(E_H_dic_processed[ewd.lower()])
 
         #match root word
-        for rt_wd in E_root_wds[ewd]:
-            if rt_wd.lower() in E_H_dic_processed:
-                h_dic_wd.extend(E_H_dic_processed[rt_wd.lower()])
+        #for key in E_root_wds:
+        if ewd in E_root_wds:
+            for rt_wd in E_root_wds[ewd]:
+                #rt_wd = E_root_wds[key][0]
+                if rt_wd.lower() in E_H_dic_processed:
+                    h_dic_wd.extend(E_H_dic_processed[rt_wd.lower()])
 
         #
         for hwd in h_dic_wd:
             if hwd in H_wds or hwd in H_root_wds_list:
+                if hwd in H_root_wds_rev:
                     E_H_aligned[ewd] = H_root_wds_rev[hwd]
                     break
             else:
@@ -172,72 +179,6 @@ def pmb_sbn_process(sbn_data):
         if('.v.' in line):
             verb = line.split()[0]
 
-
-
-
-
-#Read English Hindi dictionary
-with open(sys.argv[1], 'r')as f:
-    E_H_dic = f.readlines()
-E_H_dic_processed = dic_process(E_H_dic)
-
-#read English Hindi raw sentence
-with open(sys.argv[2], 'r') as f:
-    E_H_sen = f.readlines()
-
-#read English morph from lt-proc
-with open(sys.argv[3], 'r') as f:
-    E_morph = f.readlines()
-
-#read Hindi morph from lt-proc
-with open(sys.argv[4], 'r') as f:
-    H_morph = f.readlines()
-
-#read English Hindi lwg info
-with open(sys.argv[5], 'r') as f:
-    E_H_lwg = f.readlines()
-
-#read English Hindi lwg info
-with open(sys.argv[6], 'r') as f:
-    E_H_controlled_dic = f.readlines()
-    E_H_controlled_dic_processed = {}
-    for line in E_H_controlled_dic:
-        eng_wd = line.split('\t')[0]
-        hnd_wd = line.split('\t')[1].strip()
-        E_H_controlled_dic_processed[eng_wd] = hnd_wd
-
-#read sbn files
-dirs = sorted(os.listdir(sys.argv[7]))
-sbn = []
-for d in dirs:
-    with open(sys.argv[7]+'/'+d+'/en.drs.sbn', 'r') as f:
-        sbn.append(f.readlines())
-
-
-#read eng_hnd_tam list
-with open(sys.argv[8], 'r') as f:
-    e_h_tam = f.readlines()
-    e_h_tam_dic = {}
-    for line in e_h_tam:
-        if(len(line.strip()) > 0):
-            e_tam = line.split(';')[0].strip('"')
-            h_tam = line.split(';')[1].strip('"').split('{')[0]
-            e_h_tam_dic[e_tam] = h_tam
-
-
-#read hnd_tam all forms
-with open(sys.argv[9], 'r') as f:
-    h_tam_all_form = f.readlines()
-    h_tam_all_form_dic = {}
-    for line in h_tam_all_form:
-        h_tam = line.split(',')[0]
-        h_form = line.split()[1].strip()
-        if h_tam in h_tam_all_form_dic:
-            h_tam_all_form_dic[h_tam].append(h_form)
-        else:
-            h_tam_all_form_dic[h_tam] = [h_form]
-
-
 #compute tam information from sbn data
 def get_eng_tam_from_sbn(sbn_data):
 
@@ -294,11 +235,123 @@ def get_eng_hnd_tam_equivalent(E_H_aligned, H_wds, H_root_wds, E_wds, E_vb, E_lw
     return tam_eng_hnd
 
 
+'''
 
+#Read English Hindi dictionary
+with open(sys.argv[1], 'r')as f:
+    E_H_dic = f.readlines()
+E_H_dic_processed = dic_process(E_H_dic)
 
-for sen, e_morph, h_morph, e_h_lwg, sbn_line in zip(E_H_sen, E_morph, H_morph, E_H_lwg, sbn):
-    E_H_aligned = align(sen.strip(), e_morph, h_morph, e_h_lwg.strip(), E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic)
+#read English Hindi raw sentence
+with open(sys.argv[2], 'r') as f:
+    E_H_sen = f.readlines()
+
+#read English morph from lt-proc
+with open(sys.argv[3], 'r') as f:
+    E_morph = f.readlines()
+
+#read Hindi morph from lt-proc
+with open(sys.argv[4], 'r') as f:
+    H_morph = f.readlines()
+
+#read English Hindi lwg info
+with open(sys.argv[5], 'r') as f:
+    E_H_lwg = f.readlines()
+
+#read sbn files
+dirs = sorted(os.listdir(sys.argv[7]))
+sbn = []
+for d in dirs:
+    with open(sys.argv[7]+'/'+d+'/en.drs.sbn', 'r') as f:
+        sbn.append(f.readlines())
+        
+        
+        
+for sen, e_morph, h_morph, sbn_line in zip(E_H_sen, E_morph, H_morph, sbn):
+    E_H_aligned = align(sen.strip(), e_morph, h_morph, E_H_dic_processed, E_H_controlled_dic_processed, sbn_line, e_h_tam_dic, h_tam_all_form_dic)
     print(sen.strip())
     print(E_H_aligned)
+    print('---------')       
+    
+'''
+#read English Hindi lwg info
+with open('controlled_dictionary.txt', 'r') as f:
+    E_H_controlled_dic = f.readlines()
+    E_H_controlled_dic_processed = {}
+    for line in E_H_controlled_dic:
+        eng_wd = line.split('\t')[0]
+        hnd_wd = line.split('\t')[1].strip()
+        E_H_controlled_dic_processed[eng_wd] = hnd_wd
+
+
+#Read English Hindi dictionary
+with open('E_H_dictionary', 'r')as f:
+    E_H_dic = f.readlines()
+E_H_dic_processed = dic_process(E_H_dic)
+
+#read eng_hnd_tam list
+with open('e_h_tam_list-wx', 'r') as f:
+    e_h_tam = f.readlines()
+    e_h_tam_dic = {}
+    for line in e_h_tam:
+        if(len(line.strip()) > 0):
+            e_tam = line.split(';')[0].strip('"')
+            h_tam = line.split(';')[1].strip('"').split('{')[0]
+            e_h_tam_dic[e_tam] = h_tam
+
+
+#read hnd_tam all forms
+with open('hnd_tam_all_form', 'r') as f:
+    h_tam_all_form = f.readlines()
+    h_tam_all_form_dic = {}
+    for line in h_tam_all_form:
+        h_tam = line.split(',')[0]
+        h_form = line.split()[1].strip()
+        if h_tam in h_tam_all_form_dic:
+            h_tam_all_form_dic[h_tam].append(h_form)
+        else:
+            h_tam_all_form_dic[h_tam] = [h_form]
+
+
+with open('nmt-sbn.txt', 'r') as f:
+    sbn_cont = f.read()
+
+sbn_sent = sbn_cont.split('###')
+eng_sen = open('eng.txt', 'w')
+hnd_sen = open('hnd.txt', 'w')
+
+sbn_sent1 = []
+for s in sbn_sent:
+    if (len(s.strip()) > 0):
+        eng = s.strip().split('\n')[0].split('\t')[0]
+        hnd = s.strip().split('\n')[0].split('\t')[1]
+
+        eng_sen.write(eng+'\n')
+        hnd_sen.write(hnd+'\n')
+        sbn_sent1.append(s)
+
+eng_sen.close()
+hnd_sen.close()
+
+os.system('lt-proc -a en.morf.bin eng.txt  eng_morph')
+os.system('lt-proc -a -c  hi.morf.bin hnd.txt hnd_morph')
+
+with open('eng_morph', 'r') as f:
+    E_morph = f.readlines()
+
+with open('hnd_morph', 'r') as f:
+    H_morph = f.readlines()
+
+for sbn, e_morph, h_morph in zip(sbn_sent1, E_morph, H_morph):
+    eng_hnd = sbn.strip().split('\n')[0].strip()
+    E_H_aligned = align(eng_hnd, e_morph, h_morph, E_H_dic_processed, E_H_controlled_dic_processed, sbn, e_h_tam_dic, h_tam_all_form_dic)
+    print(eng_hnd)
+    print(E_H_aligned)
     print('---------')
+
+
+
+
+
+
 
