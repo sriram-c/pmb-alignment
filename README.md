@@ -22,7 +22,7 @@ python 3.0 or higher
 
 ### To Run:
 
-sh run.sh
+sh run.sh nmt-sbn.txt
 
 ### Output:
 

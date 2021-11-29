@@ -274,6 +274,8 @@ for sen, e_morph, h_morph, sbn_line in zip(E_H_sen, E_morph, H_morph, sbn):
     print('---------')       
     
 '''
+
+
 #read English Hindi lwg info
 with open('controlled_dictionary.txt', 'r') as f:
     E_H_controlled_dic = f.readlines()
@@ -313,7 +315,8 @@ with open('hnd_tam_all_form', 'r') as f:
             h_tam_all_form_dic[h_tam] = [h_form]
 
 
-with open('nmt-sbn.txt', 'r') as f:
+#with open('nmt-sbn.txt', 'r') as f:
+with open(sys.argv[1], 'r') as f:
     sbn_cont = f.read()
 
 sbn_sent = sbn_cont.split('###')
@@ -348,10 +351,4 @@ for sbn, e_morph, h_morph in zip(sbn_sent1, E_morph, H_morph):
     print(eng_hnd)
     print(E_H_aligned)
     print('---------')
-
-
-
-
-
-
 
