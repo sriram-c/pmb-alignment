@@ -4,3 +4,8 @@ TODO:
 2. logic for generating root and tam 
 3. see all forms tam from vanasthali students
 
+27th
+1. read sentences from raw_sbn and process one by one
+2. create raw_sbn_hnd file by searching nmt prob sent
+	and putting equiv hnd manual translation 
+

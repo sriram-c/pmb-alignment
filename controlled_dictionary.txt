@@ -6,3 +6,5 @@ Tom	toYma
 get hair cut	bAla katavA
 Jackson	jEksana
 ATM	etIema
+teapot	cAyaxAnI
+tooth	xAMwa
